@@ -1,0 +1,24 @@
+<h4><b>Add New Employee..</b></h4>
+<form (ngSubmit)="onSubmit()" #emplForm="ngForm">
+    <div [hidden]="submitted" >
+        <span>remove this after u are done: </span>{{diagnostic}}
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)] ="model.name" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Title:</label>
+            <input type="text" class="form-control" id="title" name="title"  [(ngModel)] ="model.title" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" class="form-control" id="age" name="age"  [(ngModel)]="model.age" required>
+        </div>
+        <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="text" class="form-control" id="salary" name="salary"  [(ngModel)]="model.salary" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!emplForm.form.valid">Submit</button>
+    <button type="button" class="btn btn-default" (click)="newEmployee(); emplForm.reset()">Clear</button>
+ </form>
