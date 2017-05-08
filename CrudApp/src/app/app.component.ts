@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -19,4 +19,18 @@ import { Component } from '@angular/core';
               }
            `]
 })
-export class AppComponent  { title = 'Welocome to AngularJS 4 CRUD operation App !!!'; }
+export class AppComponent  { 
+    constructor(
+        private  router: Router,
+    ){}
+
+    title = 'Welocome to AngularJS 4 CRUD operation App !!!'; 
+
+    gotoAddNewEmployee():void{
+        this.router.navigate(['/add']);
+    }
+
+     gotoAllEmployees():void{
+        this.router.navigate(['/list-employees']);
+    }
+}

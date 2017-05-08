@@ -2,6 +2,7 @@
 
 
 <div class="myContainer" >
-    <div class="operaiton">Add New Employee</div>
-    <div class="operaiton">All Employee</div>
+    <div class="operaiton" (click)="gotoAddNewEmployee()" >Add New Employee</div>
+    <div class="operaiton" (click)="gotoAllEmployees()" >All Employee</div>
 </div>
+<router-outlet></router-outlet>
