@@ -18,7 +18,7 @@ export class AddNewEmployeeComponent{
 
     }
 
-    model = new Employee('Ehan','Doctor', 1, 500000)
+    model = new Employee('Ehan','Doctor', 99, 99)
 
     submitted = false;
     onSubmit(emplForm: any){
@@ -33,7 +33,6 @@ export class AddNewEmployeeComponent{
     }
     newEmployee(){
         this.model =  new Employee('','', 0, 0); 
-        //console.log('sdddssd');
     }
 
     addNewEmployee(){
