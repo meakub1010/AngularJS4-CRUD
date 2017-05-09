@@ -10,7 +10,7 @@ import { Employee } from './employee';
 
 export class AddNewEmployeeComponent{
     
-    model = new Employee(0,'Ehan','Doctor',1,500000)
+    model = new Employee('Ehan','Doctor', 1, 500000)
 
     submitted = false;
     onSubmit(){
@@ -18,7 +18,7 @@ export class AddNewEmployeeComponent{
          console.log('submitted');
         }
     newEmployee(){
-        this.model =  new Employee(0,'','',0,0); 
+        this.model =  new Employee('','', 0, 0); 
         console.log('sdddssd');
     }
 
