@@ -1,1 +1,9 @@
 <h3>List of all employees</h3>
+<ul>
+    <li *ngFor="let model of employees">
+        <b>Name: </b>{{model.name}}
+        <b>Title: </b>{{model.title}}
+        <b>Age: </b>{{model.age}}
+        <b>Salary: </b>{{model.salary}}
+    </li>
+</ul>
