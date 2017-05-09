@@ -21,7 +21,6 @@ export class EmployeesComponent implements OnInit {
     employees: Employee[];
 
     getEmployees(): void{
-        //this.employees = 
         this.dataService.getEmployees().then(employees => this.employees = employees);   
     }
 }

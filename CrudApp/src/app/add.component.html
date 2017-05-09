@@ -1,10 +1,13 @@
 <h4><b>Add New Employee..</b></h4>
-<form (ngSubmit)="onSubmit()" #emplForm="ngForm">
+<form (ngSubmit)="onSubmit(emplForm)" #emplForm="ngForm">
     <div [hidden]="submitted" >
         <span>remove this after u are done: </span>{{diagnostic}}
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" [(ngModel)] ="model.name" required>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)] ="model.name" #name="ngModel" required>
+            <div [hidden]="name.valid || name.pristine " class="alert alert-danger" >
+                Name is required.
+            </div>
         </div>
         <div class="form-group">
             <label for="name">Title:</label>
@@ -12,13 +15,19 @@
         </div>
         <div class="form-group">
             <label for="age">Age:</label>
-            <input type="text" class="form-control" id="age" name="age"  [(ngModel)]="model.age" required>
+            <input type="text" class="form-control" id="age" name="age" #age="ngModel" [(ngModel)]="model.age" required>
+            <div [hidden]="age.valid || age.pristine " class="alert alert-danger" >
+                Age is required.
+            </div>
         </div>
         <div class="form-group">
             <label for="salary">Salary:</label>
-            <input type="text" class="form-control" id="salary" name="salary"  [(ngModel)]="model.salary" required>
+            <input type="text" class="form-control" id="salary" name="salary" #salary="ngModel"  [(ngModel)]="model.salary" required>
+            <div [hidden]="salary.valid || salary.pristine " class="alert alert-danger" >
+                Salary is required.
+            </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-success" [disabled]="!emplForm.form.valid">Submit</button>
+    <button type="submit" class="btn btn-success" >Submit</button>
     <button type="button" class="btn btn-default" (click)="newEmployee(); emplForm.reset()">Clear</button>
  </form>
