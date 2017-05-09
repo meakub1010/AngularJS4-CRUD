@@ -13,4 +13,9 @@ export class MockService {
             return Promise.resolve( employees);
         }
 
+        create(employee: Employee):Promise<Employee>{
+            employees.push(employee);
+            return Promise.resolve(employee);
+        }
+
 }
